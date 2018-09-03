@@ -6,7 +6,7 @@ import controllers from '../controllers';
 import { fallbackErrorHandler } from '../utilities/error';
 
 export default class ApiServer {
-  public express: express.Application;
+  private express: express.Application;
   private port: number;
 
   constructor(base_uri: string = '', port: number = 8080) {

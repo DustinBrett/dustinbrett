@@ -1,1 +1,30 @@
-{{ testJSON }}
+<nav>
+  <ul>
+    <li *ngFor="let navItem of navMenu">
+      <a href="{{ navItem.url }}">{{ navItem.name }}</a>
+    </li>
+  </ul>
+</nav>
+
+<header>
+  <h1>DustinBrett.com</h1>
+  <h3>Work in Progress</h3>
+</header>
+
+<main>
+  <section>
+    <article>
+      <header>
+        <h1>1st blog post</h1>
+        <h3>Monday, Sept 3rd, 2018</h3>
+      </header>
+      <p>1st of many</p>
+    </article>
+  </section>
+</main>
+
+<footer>
+  <address>
+    Dustin Brett: <a href="mailto:dustinbrett@gmail.com">dustinbrett@gmail.com</a>
+  </address>
+</footer>

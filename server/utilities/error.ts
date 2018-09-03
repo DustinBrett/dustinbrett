@@ -1,11 +1,17 @@
 import { Request, Response, NextFunction } from 'express';
 
-const logError = (error: any, request: Request): void => {
+const logError = (error: Error, request: Request): void => {
   console.log(error, request);
 };
 
-export const fallbackErrorHandler = (err: any, req: Request, res: Response, next: NextFunction): void => {
-  res.send({ message: err.message });
+export const fallbackErrorHandler = (err: Error, req: Request, res: Response, next: NextFunction): void => {
+  if (res) {
+    res.send({ message: err.message });
+  }
+
   logError(err, req);
-  next();
+
+  if (next) {
+    next();
+  }
 };
