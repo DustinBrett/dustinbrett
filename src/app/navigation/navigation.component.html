@@ -2,11 +2,6 @@
   <ul *ngIf="menu" class="nav">
     <li *ngFor="let item of menu" [class.active]="item.name === current">
       <a href="#" (click)="current = item.name">{{ item.name }}</a>
-      <!-- <ul *ngIf="item.submenu">
-        <li *ngFor="let subItem of item.submenu">
-          <a href="{{ subItem.url }}">{{ subItem.name }}</a>
-        </li>
-      </ul> -->
     </li>
   </ul>
 </nav>

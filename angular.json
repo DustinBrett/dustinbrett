@@ -32,6 +32,17 @@
             "scripts": []
           },
           "configurations": {
+            "development": {
+              "optimization": false,
+              "outputHashing": "all",
+              "sourceMap": false,
+              "extractCss": false,
+              "namedChunks": true,
+              "aot": true,
+              "extractLicenses": false,
+              "vendorChunk": false,
+              "buildOptimizer": false
+            },
             "production": {
               "fileReplacements": [
                 {
@@ -57,15 +68,12 @@
             "browserTarget": "dustinbrett:build"
           },
           "configurations": {
+            "development": {
+              "browserTarget": "dustinbrett:build:development"
+            },
             "production": {
               "browserTarget": "dustinbrett:build:production"
             }
-          }
-        },
-        "extract-i18n": {
-          "builder": "@angular-devkit/build-angular:extract-i18n",
-          "options": {
-            "browserTarget": "dustinbrett:build"
           }
         },
         "test": {

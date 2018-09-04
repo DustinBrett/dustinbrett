@@ -1,10 +1,10 @@
 import { Router, Request, Response } from 'express';
 
-const requireDirectory = require('require.directory');
+const requireDir = require('require.directory');
 
 export default (): Router => {
   const router = Router();
-  const controllers = requireDirectory('./', { extensions: ['.js', '.ts'] });
+  const controllers = requireDir('./', { extensions: ['.ts'] });
 
   for (const controller in controllers) {
     if (

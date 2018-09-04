@@ -7,15 +7,15 @@ nav {
     margin: 0;
     padding: 0;
     overflow: hidden;
-    background-color: #333;
+    background-color: #333333;
     
     li {
         float: left;
-        border-right: 1px solid #bbb;
+        border-right: 1px solid #bbbbbb;
     }
 
     li.active {
-        background-color: #4CAF50;
+        background-color: #1e7d23;
     }
 
     li:last-child {
@@ -26,11 +26,11 @@ nav {
         display: block;
         color: white;
         text-align: center;
-        padding: 14px 16px;
+        padding: 15px 15px;
         text-decoration: none;
     }
     
     li a:hover {
-        background-color: #111;
+        background-color: #111111;
     }
 }

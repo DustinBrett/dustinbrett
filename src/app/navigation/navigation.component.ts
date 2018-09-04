@@ -1,26 +1,13 @@
 import { Component } from '@angular/core';
 
+import { menu, menuDefault } from '../../data';
+
 @Component({
   selector: 'app-navigation',
   templateUrl: './navigation.component.html',
   styleUrls: ['./navigation.component.scss']
 })
 export class NavigationComponent {
-  public current = 'Home';
-  public menu = [
-    {
-      name: 'Home',
-      url: '/home/'
-    },
-    {
-      name: 'Blog',
-      url: '/blog/',
-      submenu: [
-        {
-          name: 'Travel',
-          url: '/travel/'
-        }
-      ]
-    }
-  ];
+  public current = menuDefault;
+  public menu = menu;
 }

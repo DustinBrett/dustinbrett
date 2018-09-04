@@ -1,14 +1,16 @@
 {
-  "name": "dustinbrett",
-  "version": "0.0.0",
+  "name": "dustinbrett_frontend",
+  "version": "1.0.0",
   "scripts": {
     "ng": "ng",
     "start": "ng serve",
     "build": "ng build",
     "test": "ng test",
     "lint": "ng lint",
-    "e2e": "ng e2e"
+    "e2e": "ng e2e",
+    "serve": "ng serve --configuration=development"
   },
+  "author": "Dustin Brett",
   "private": true,
   "dependencies": {
     "@angular/animations": "^6.1.0",

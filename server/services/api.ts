@@ -3,7 +3,7 @@ import * as cors from 'cors';
 import * as compression from 'compression';
 
 import controllers from '../controllers';
-import { fallbackErrorHandler } from '../utilities/error';
+import { errorHandler } from '../utilities/error';
 
 export default class ApiServer {
   private express: express.Application;
@@ -23,8 +23,8 @@ export default class ApiServer {
     // Controllers
     this.express.use(base_uri, controllers());
 
-    // Error handling
-    this.express.use(fallbackErrorHandler);
+    // Error Handling
+    this.express.use(errorHandler);
   }
 
   public start(): void {
