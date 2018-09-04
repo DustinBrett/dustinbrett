@@ -1,4 +1,5 @@
 // TODO: Setup service to middle man the API, use shared schema/types to talk about all data
+// TODO: Create WP import script
 
 // export const posts = [
 //   {
