@@ -7,23 +7,12 @@ export default {
   path: '/post',
 
   handler: ((): Router => {
-    const dataRoute = (req: Request, res: Response): void => {
-      Post.Find(
-        [{
-          $match: {
-            name: { $eq: req.params.post },
-            data: { $exists: true }
-          }
-        }],
-        (results: any) => {
-          console.log(results);
-          res.send(results);
-        }
-      );
+    const postById = (req: Request, res: Response): void => {
+      res.send(Post.findById(req.params.id).then(JSON.stringify));
     };
 
     return Router()
-      .get('/:post/data', dataRoute)
+      .get('/:id/data', postById)
     ;
   })()
 

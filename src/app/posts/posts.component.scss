@@ -1,0 +1,10 @@
+.post {
+    border-style: dotted;
+    border-width: 1px;
+    margin: 0px 15px 15px 15px;
+    padding: 0px 15px 0px 15px;
+}
+
+.post:last-child {
+    margin-bottom: 0;
+}

@@ -28,6 +28,6 @@ export default class ApiServer {
   }
 
   public start(): void {
-    this.express.listen(this.port, () => console.log(`Listening @ http://localhost:${ this.port }`));
+    this.express.listen(this.port, () => console.log(`API: Listening @ http://localhost:${ this.port }`));
   }
 }
