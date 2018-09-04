@@ -13,6 +13,6 @@ export default class DbClient {
     connection.on('error', fallbackErrorHandler);
     connection.on('open', () => console.log(`DB: Connected @ ${ this.uri }`));
 
-    return connect(this.uri);
+    return connect(this.uri, { useNewUrlParser: true });
   }
 }
