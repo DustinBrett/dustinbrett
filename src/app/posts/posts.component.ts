@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 
-import { posts } from '../../data';
+import { HttpClient } from '@angular/common/http';
 
 @Component({
   selector: 'app-posts',
@@ -8,5 +8,14 @@ import { posts } from '../../data';
   styleUrls: ['./posts.component.scss']
 })
 export class PostsComponent {
-  public posts = posts;
+  public posts: Object = [];
+  public postTruncate = 250;
+
+  constructor(private http: HttpClient) {
+    this.reqPosts();
+  }
+
+  reqPosts(id?: Number) {
+    this.http.get(`http://localhost:3010/v1/posts/${ id ? id : '' }`).subscribe(resp => this.posts = resp);
+  }
 }

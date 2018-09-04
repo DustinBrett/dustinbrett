@@ -1,9 +1,9 @@
 <section id="posts">
-  <article *ngFor="let post of posts" class="post">
+  <article *ngFor="let post of posts" (click)="reqPosts(posts.length === 1 ? undefined : post.id)" class="post">
     <header>
-      <h1>{{ post.title }}</h1>
-      <h3>{{ post.date | date: 'longDate' }}</h3>
-    </header>
-    <p>{{ post.body }}</p>
+        <h1>{{ post.data.title }}</h1>
+        <h3>{{ post.data.date | date: 'longDate' }}</h3>
+      </header>
+      <p>{{ posts.length === 1 ? post.data.body : (post.data.body | slice: 0:postTruncate) }}</p>
   </article>
 </section>
