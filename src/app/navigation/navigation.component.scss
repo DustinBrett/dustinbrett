@@ -13,12 +13,12 @@ nav {
       float: left;
       border-right: 1px solid #bbbbbb;
 
-      &.active {
-        background-color: #1e7d23;
-      }
-
       &:last-child {
         border-right: none;
+      }
+
+      &.active {
+        background-color: #304979;
       }
 
       a {
