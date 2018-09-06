@@ -1,7 +1,11 @@
 import { Request, Response, NextFunction } from 'express';
 
-const logError = (error: Error, request?: Request): void => {
-  console.log(error, request);
+export const logError = (error: Error): void => {
+  // TODO: Log errors to Sentry
+  // TODO: Only log Error's?
+  if (error instanceof Error) {
+    console.error(error.message ? error.message : error);
+  }
 };
 
 export const errorHandler = (err: Error, req?: Request, res?: Response, next?: NextFunction): void => {
@@ -9,7 +13,7 @@ export const errorHandler = (err: Error, req?: Request, res?: Response, next?: N
     res.send({ message: err.message });
   }
 
-  logError(err, req);
+  logError(err);
 
   if (next) {
     next();

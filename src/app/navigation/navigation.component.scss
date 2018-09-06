@@ -8,29 +8,29 @@ nav {
     padding: 0;
     overflow: hidden;
     background-color: #333333;
-    
+
     li {
-        float: left;
-        border-right: 1px solid #bbbbbb;
-    }
+      float: left;
+      border-right: 1px solid #bbbbbb;
 
-    li.active {
+      &.active {
         background-color: #1e7d23;
-    }
+      }
 
-    li:last-child {
+      &:last-child {
         border-right: none;
-    }
-    
-    li a {
+      }
+
+      a {
         display: block;
         color: white;
         text-align: center;
         padding: 15px 15px;
         text-decoration: none;
-    }
-    
-    li a:hover {
-        background-color: #111111;
+
+        &:hover {
+          background-color: #111111;
+        }
+      }
     }
 }

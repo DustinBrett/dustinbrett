@@ -1,6 +1,6 @@
 import { connect, connection, Mongoose } from 'mongoose';
 
-import { errorHandler } from '../utilities/error';
+import { logError } from '../utilities/error';
 
 export default class DbClient {
   private uri: string;
@@ -10,8 +10,8 @@ export default class DbClient {
   }
 
   public connect(): Promise<Mongoose> {
-    connection.on('error', errorHandler);
-    connection.on('open', () => console.log(`DB: Connected @ ${ this.uri }`));
+    connection.on('error', logError);
+    connection.on('open', () => console.info(`DB: Connected @ ${ this.uri }`));
 
     return connect(this.uri, { useNewUrlParser: true });
   }

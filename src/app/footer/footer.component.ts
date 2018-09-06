@@ -11,6 +11,6 @@ export class FooterComponent {
   }
 
   contactModal() {
-    console.log('TODO: Show contact form modal');
+    // TODO: Show contact form modal
   }
 }

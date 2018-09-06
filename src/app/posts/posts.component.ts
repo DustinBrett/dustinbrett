@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
-
 import { HttpClient } from '@angular/common/http';
+
+import { IPost } from '../../../server/models/post';
 
 @Component({
   selector: 'app-posts',
@@ -8,14 +9,21 @@ import { HttpClient } from '@angular/common/http';
   styleUrls: ['./posts.component.scss']
 })
 export class PostsComponent {
-  public posts: Object = [];
-  public postTruncate = 250;
+  public posts: Array<IPost> = [];
+
+  public postTruncate = 250; // TODO: Move to settings/database
+  public apiUri = 'http://localhost:3010'; // TODO: Move to settings/database
+  public apiPostsUri = `${ this.apiUri }/v1/posts`;
 
   constructor(private http: HttpClient) {
-    this.reqPosts();
+    this.requestPosts();
   }
 
-  reqPosts(id?: Number) {
-    this.http.get(`http://localhost:3010/v1/posts/${ id ? id : '' }`).subscribe(resp => this.posts = resp);
+  requestPosts(id?: Number): void {
+    this.http.get(
+      `${ this.apiPostsUri }/${ typeof id === 'number' ? id : '' }`
+    ).subscribe((posts: Object) => {
+      this.posts = <Array<IPost>>posts;
+    });
   }
 }
