@@ -11,7 +11,7 @@ import { IPost } from '../../../server/models/post';
 export class PostsComponent {
   public posts: Array<IPost> = [];
 
-  public postTruncate = 500; // TODO: Move to settings/database
+  public maxPosts = 1; // TODO: Move to settings/database
   public apiUri = 'http://localhost:3010'; // TODO: Move to settings/database
   public apiPostsUri = `${ this.apiUri }/v1/posts`;
 

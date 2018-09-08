@@ -1,9 +1,11 @@
 <section id="posts">
-  <article *ngFor="let post of posts" (click)="requestPosts(posts.length === 1 ? undefined : post.id)" class="post">
-    <header>
-      <h1>{{ post.title }}</h1>
-      <h3>{{ post.posted | date: 'longDate' }}</h3>
-    </header>
-    <p [innerHtml]="posts.length === 1 ? post.body : (post.body | slice: 0:postTruncate)"></p>
-  </article>
+  <ng-container *ngFor="let post of posts; let i = index">
+    <article *ngIf="i < maxPosts" class="post" (click)="requestPosts(posts.length === 1 ? undefined : post.id)">
+      <header>
+        <h1>{{ post.title }}</h1>
+        <h3>{{ post.posted | date: 'longDate' }}</h3>
+      </header>
+      <p [innerHtml]="post.body"></p>
+    </article>
+  </ng-container>
 </section>
