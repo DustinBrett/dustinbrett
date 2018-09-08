@@ -4,6 +4,6 @@
       <h1>{{ post.title }}</h1>
       <h3>{{ post.posted | date: 'longDate' }}</h3>
     </header>
-    <p>{{ posts.length === 1 ? post.body : (post.body | slice: 0:postTruncate) }}</p>
+    <p [innerHtml]="posts.length === 1 ? post.body : (post.body | slice: 0:postTruncate)"></p>
   </article>
 </section>

@@ -14,7 +14,7 @@ const postSchema = new Schema({
 export interface IPost {
   body: string;
   created?: number;
-  id?: number;
+  id: number;
   posted: number;
   title: string;
 }

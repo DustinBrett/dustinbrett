@@ -1,4 +1,4 @@
-import { migratePosts } from './posts';
+import { migratePosts } from './wordpress';
 
 export const migrateDb = (init: boolean): void => {
   if (init) {
